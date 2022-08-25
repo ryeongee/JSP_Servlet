@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -15,8 +16,8 @@ public class TestController {
         return "/template/auth/login";
     }
     @PostMapping("/auth/login")
-    public String login(){
-        return "/template/home";
+    public String login(BindingResult bindingResult) {
+        System.out.println("========adsfsdf");
+        return "/";
     }
-
 }

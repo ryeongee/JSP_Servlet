@@ -13,6 +13,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //super 삭제 - 기존 시큐리티가 가지고 있는 기능 비활성화
         http.csrf().disable(); //csrf token 삭제 postman에서의 request 이던 홈페이지에서 보낸 request 이던간에 구분 안함
         http.authorizeRequests()
+                .antMatchers("/user/**")
+                .authenticated()
                 .anyRequest()
                 .permitAll()
                 .and()
