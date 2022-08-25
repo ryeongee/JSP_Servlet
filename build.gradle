@@ -1,0 +1,37 @@
+
+
+apply plugin: 'java'
+apply plugin: 'war'
+repositories {
+	mavenCentral()
+	maven {
+		url "https://repo.spring.io/release"
+	}
+	maven {
+		url "https://repository.jboss.org/maven2"
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.5'
+	testImplementation 'org.springframework.security:spring-security-test:5.4.6'
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+	implementation 'org.apache.tomcat:tomcat-jasper:9.0.43'
+	implementation 'javax.servlet:jstl:1.2'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.4.5'
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}

@@ -1,0 +1,17 @@
+server:
+  port: 1112
+  servlet :
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
