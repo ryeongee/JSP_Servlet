@@ -1,4 +1,4 @@
-package com.example.demo.test.com.controller;
+package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TestController {
     @GetMapping("/")
     public String mainPage() {
-        return "/main/main";
+        return "/template/home";
     }
     @GetMapping("/auth/login")
     public String login() {
         System.out.println("get 받음");
-        return "/auth/login";
+        return "/template/auth/login";
     }
 }

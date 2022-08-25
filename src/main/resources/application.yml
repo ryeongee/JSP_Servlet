@@ -8,8 +8,7 @@ server:
 spring:
   mvc:
     view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+      suffix: .html
 
   servlet:
     multipart:
